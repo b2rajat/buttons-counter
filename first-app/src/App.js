@@ -21,7 +21,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <p className="App-intro">{this.state.apiResponse}hi</p>
+                <p className="App-intro">{this.state.apiResponse}</p>
             </div>
         );
     }
