@@ -1,0 +1,24 @@
+{
+  "counter": [
+    {
+      "id": 1,
+      "title": "learn json-server",
+      "author": "Mrinmay Mukherjee"
+    },
+    {
+      "id": 10,
+      "title": "json-server is not bad. It's great!",
+      "author": "Dwight Shrute"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "it's pretty awesome",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "Mrinmay Mukherjee"
+  }
+}
