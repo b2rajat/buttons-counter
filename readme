@@ -1,0 +1,5 @@
+inside api
+json-server --watch data.json --port 8000
+
+first-app
+npm start
