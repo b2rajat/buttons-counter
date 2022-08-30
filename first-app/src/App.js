@@ -1,22 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
 
-  fetch('http://localhost:8000/counter/1/')
+let data = [];
+
+  fetch('http://localhost:8000/counter/')
  .then(response => response.json())
  .catch(error => console.error('Error:', error))
- .then(response => console.log('Success:', JSON.stringify(response)));
+ .then(response => data =response);
 
- function updateCounter() {
-  console.log('hellllooo');
 
-  let data = { 
-    "id": 10, 
-    "title": "json-server is not bad. It's great!", 
-    "author": "Dwight Shrute" 
+
+
+
+
+ function updateCounter(id) {
+  console.log(data,'data');
+   //console.log(data[0].length, 'length');
+
+  for(var i = 0; i<data[0].length ; i++) {
+    if(data[0][i].id === id){
+      data[0][i].value++;
+      break;
+    }
   }
-  
+
+
    fetch('http://localhost:8000/counter/', {
     method: "POST",
     headers: {
@@ -27,12 +36,16 @@ function App() {
     .then(response => response.json())
     .catch(error => console.error('Error:', error))
     .then(response => console.log('Success:', JSON.stringify(response)));
+
+
  }
 
   return (
     <div className="App">
      
-    <button onClick={updateCounter}>
+    <button 
+      onClick={() => updateCounter(1)}
+    >
       First
     </button>
     </div>
